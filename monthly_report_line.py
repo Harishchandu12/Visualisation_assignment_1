@@ -1,10 +1,16 @@
 import matplotlib.pyplot as plt
 import pandas as pd
+import inspect
+import os.path
 
+
+# get current dir
+filename = inspect.getframeinfo(inspect.currentframe()).filename
+path     = os.path.dirname(os.path.abspath(filename))
 
 # read csv
 # link for kaggle dataset : https://www.kaggle.com/datasets/podsyp/time-series-starter-dataset
-input_path = "C:\\Users\\chunc\\OneDrive\\Documents\\App_Ds1\\Visualisation_assignment_1\\Month_Value_1.csv"
+input_path = path+"\Month_Value_1.csv"
 monthly_sales_input_df = pd.read_csv(input_path)
 
 
